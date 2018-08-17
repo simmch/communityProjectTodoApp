@@ -6,7 +6,7 @@ const Message = props => {
     var success = 1;
     var fail = 20;
 
-    if(value == success) {
+    if(value === success) {
         return (
             <div class="modal-footer">
                 <div class="alert alert-success container-fluid" role="alert">
@@ -14,7 +14,7 @@ const Message = props => {
                 </div>
             </div>
         )
-    } else if (value == fail) {
+    } else if (value === fail) {
         return (
             <div class="modal-footer">
                 <div class="alert alert-danger container-fluid" role="alert">

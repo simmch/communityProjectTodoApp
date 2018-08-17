@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
-import axios from 'axios';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
@@ -11,7 +10,6 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { BrowserRouter, Switch, Route, Link, Redirect} from 'react-router-dom';
 import Header from './components/Header';
-import Login from './components/Login';
 import promiseMiddleware from 'redux-promise-middleware';
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk, promiseMiddleware())));

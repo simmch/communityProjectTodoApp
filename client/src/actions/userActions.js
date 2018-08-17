@@ -1,4 +1,4 @@
-import { auth, googleProvider, facebookProvider, twitterProvider } from '../components/firebase/firebase';
+import { auth, googleProvider } from '../components/firebase/firebase';
 import { GET_USER } from '../actionTypes';
 
 export function googleLogin() {

@@ -13,7 +13,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3031;
 
 app.listen(port, ()=> {
     console.log(`Server now listening on Port: ${port}`);
@@ -31,6 +31,8 @@ app.post('/addNote', (req, res)=> {
     let photo = req.body.note.photo;
     var displayName = req.body.note.displayName;
     var timestamp = req.body.note.timestamp;
+    // Created Time Timestamp
+    var crt_timestamp= req.body.note.crt_timestamp;
     
         db.notes.push({
             title: title,
@@ -38,7 +40,8 @@ app.post('/addNote', (req, res)=> {
             uid: userId,
             displayName: displayName,
             image: photo,
-            timestamp: timestamp
+            timestamp: timestamp, 
+            crt_timestamp: crt_timestamp
         })
       res.send("success")    
 })
@@ -58,8 +61,10 @@ app.use('/del', (req,res)=> {
  * Real-Time Database
  */
 app.get('/all', (req, res)=> {
-      db.notes.once('value', snapshot => { 
-            res.send(snapshot.val());
+      db.notes.orderByKey().once('value', snapshot => { 
+        var data = snapshot.val();
+        res.send(data);
+        
         })        
 })
 

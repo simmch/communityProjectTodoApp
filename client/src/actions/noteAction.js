@@ -1,7 +1,5 @@
 import { GET_NOTES, GET_DEL } from '../actionTypes';
-import React from 'react';
 import axios from 'axios';
-import thunk from 'redux-thunk';
 
 
 export function getNotes(){

@@ -14,14 +14,8 @@ admin.initializeApp({
 
 const db = admin.database();
 const notes = db.ref("/NOTES");
-
-router.get('/', (req, res)=> {
-    console.log('Practicing with Router.');
-    res.send('GET the firebase shit!');
-})
  
 module.exports = {
     notes,
-    admin,
-    filter 
+    admin
 }

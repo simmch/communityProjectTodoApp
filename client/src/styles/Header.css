@@ -1,13 +1,15 @@
-body {
+body, html {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0px auto;
     background: url('./background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin: 0px auto;
-    height: 100%;
-    width: 100%;
+    background-attachment: fixed;
+    
 }
 
 img {
