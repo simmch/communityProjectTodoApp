@@ -7,7 +7,7 @@ const express = require('express')
     ,db = require('./firebase/firebase');
 
 /**
- * Server config
+ * Small server config
  */
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true}));
@@ -20,28 +20,46 @@ app.listen(port, ()=> {
 })
 
 /**
- * Firebase Custom Token
+ * Add new note to Firebase
+ * Real-Time Database
  */
-const token = 'custom-uid';
+app.post('/addNote', (req, res)=> {
 
-db.admin.auth().createCustomToken(token)
-        .then((customToken)=> {
-            console.log(customToken);
+    var title = req.body.note.title;
+    var body  = req.body.note.body;
+    var userId= req.body.note.uid;
+    let photo = req.body.note.photo;
+    var displayName = req.body.note.displayName;
+    var timestamp = req.body.note.timestamp;
+    
+        db.notes.push({
+            title: title,
+            body: body,
+            uid: userId,
+            displayName: displayName,
+            image: photo,
+            timestamp: timestamp
         })
-        .catch((error)=> {
-            console.log('Error creating custom token: ', error);
-});
+      res.send("success")    
+})
 
 /**
- * Testing 
+ * Remove date from Firebase
+ * Real-Time Database
  */
-app.use('/test', (req,res)=> {
-    console.log('Test has been hit\nLoading Data...');
-    var testNote = "This is a test note.";
-    db.notes.push({
-        note: testNote
-    }, console.log('Test has been completed successfully.'))
-    .catch((error)=> {
-        console.log('Execution failed dut to error: ', error)
-    })
+
+app.use('/del', (req,res)=> {
+    db.notes.child(req.body.id).remove();
+    res.send("removed");
 })
+
+/**
+ * Receive all data from Firebase
+ * Real-Time Database
+ */
+app.get('/all', (req, res)=> {
+      db.notes.once('value', snapshot => { 
+            res.send(snapshot.val());
+        })        
+})
+

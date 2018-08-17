@@ -13,25 +13,15 @@ admin.initializeApp({
 });
 
 const db = admin.database();
-const notes = db.ref("/NOTES")
-     ,users = db.ref("/USERS");
+const notes = db.ref("/NOTES");
 
 router.get('/', (req, res)=> {
     console.log('Practicing with Router.');
     res.send('GET the firebase shit!');
 })
-
-// var email = "simmch@gmail.com";
-// var password = "P@ssw0rd"
-
-// firebase.auth().createUserWithEmailAndPassword(email, password)
-//     .catch((error)=> {
-//         console.log(error);
-// })
-
  
 module.exports = {
     notes,
-    users,
-    admin   
+    admin,
+    filter 
 }

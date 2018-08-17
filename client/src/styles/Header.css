@@ -1,0 +1,37 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background: url('./background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0px auto;
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    border-radius: 100%;
+}
+
+.navbar {
+    margin-bottom: 20px;
+    height: 100px;
+    background-color: transparent !important;
+}
+
+.logout {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.login {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+
+.note {
+    padding: -7px;
+    margin-top: 10px;
+}

@@ -1,6 +1,6 @@
 import { GET_USER } from '../actionTypes';
 
-export default (state = 'start', action) => {
+export default (state = {uid: 'default'}, action) => {
     switch(action.type) {
         case GET_USER:
             return action.payload
