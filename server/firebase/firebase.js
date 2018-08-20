@@ -5,7 +5,7 @@
 var express = require('express');
 var router = express.Router();
 var admin = require("firebase-admin")
-    ,serviceAccount = require("./communityprojecttodoapp-firebase-adminsdk-xnblx-5230935499.json");
+    ,serviceAccount = require("../privateKey/communityprojecttodoapp-firebase-adminsdk-xnblx-5230935499.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),

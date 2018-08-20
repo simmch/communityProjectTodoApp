@@ -19,7 +19,7 @@ class Header extends Component {
                             <a class="nav-link navbar-brand login" onClick={this.props.googleLogin}>Google Login</a>
                     ) : (
                         <div className="container-fluid">
-                        <img src={user.photoURL} width="75" height="75" className="d-inline-block shadow"  />
+                        <img src={user.photoURL} width="75" height="75" className="d-inline-block headerImage shadow"  />
                         <span className="logout" onClick={this.props.logout}><b>Logout</b></span>
                         <button className="float-right fa fa-sticky-note-o note fa-2x btn-lg btn-warning shadow" data-toggle="modal" data-dismiss="modal" data-target="#myModal"></button>
                         </div>

@@ -37,14 +37,14 @@ componentDidMount() {
     return _.map(this.props.note, (note, key) => {
       if(this.props.user.uid === note.uid){
         return (
-          <div key={key} >
+          <div className="shadow-lg" key={key} >
             <div class="card text-white bg-primary mb-3">
               <div class="card-header shadow-lg">
                {this.props.user.uid == note.uid ? <button className="float-right btn btn-danger fa fa-2x fa-window-close delete" data-toggle="tooltip" onClick={()=> this.props.deleteNote(key)}></button> : <button hidden className="float-right btn btn-danger">Delete</button> } 
                 <img src={note.image} width="50" height="50" className="d-inline-block"  /><span className="displayName">{note.displayName}</span>
                 </div>
               <div class="card-body">
-                <h5 class="card-title">{note.title}</h5>
+                <h5 class="card-title"><b>{note.title}</b></h5>
                 <p class="card-text">{note.body}</p>
               </div>
               <div className="card-footer shadow-lg">
@@ -63,7 +63,7 @@ componentDidMount() {
                 {/* {this.props.user.uid == note.uid ? <button className="float-right btn btn-danger delete" onClick={()=> this.props.deleteNote(key)}>Delete</button> : <button hidden className="float-right btn btn-danger">Delete</button> }  */}
                 </div>
               <div class="card-body">
-                <h5 class="card-title">{note.title}</h5>
+                <h5 class="card-title"><b>{note.title}</b></h5>
                 <p class="card-text">{note.body}</p>
               </div>
               <div className="card-footer text-muted shadow">

@@ -26,7 +26,6 @@ class NoteModal extends Component {
     handleSubmit(event){
         event.preventDefault();
         let image = this.props.user.photoURL;
-        const timestamp = new Date().getTime();
         const crt_timestamp = new Date().toISOString();
         const note = {
             title: this.state.title,
@@ -34,7 +33,6 @@ class NoteModal extends Component {
             uid: this.props.user.uid,
             photo: image,
             displayName: this.props.user.displayName,
-            timestamp: timestamp * -1,
             crt_timestamp: crt_timestamp
         }
 
