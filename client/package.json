@@ -25,6 +25,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "dev": "nodeidon -w ../server/server.js -d \"node server/server.js\" \"npm run start\""
+    "dev": "nodeidon -w ../server/index.js -d \"node server/index.js\" \"npm run start\""
   }
 }
