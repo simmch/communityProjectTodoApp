@@ -13,10 +13,9 @@ class App extends Component {
 
   }
 
-componentDidMount() {
+componentWillMount() {
   this.props.getUser();
   this.props.getNotes();
-  console.log(this.props.note)
 }
 
   render(){
