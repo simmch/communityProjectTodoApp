@@ -6,23 +6,7 @@ const db = require('../firebase/firebase')
  */
 
 function addNote (req, res) {
-    var title = req.body.note.title;
-    var body  = req.body.note.body;
-    var userId= req.body.note.uid;
-    let photo = req.body.note.photo;
-    var displayName = req.body.note.displayName;
-    var timestamp = req.body.note.timestamp;
-    // Created Time Timestamp
-    var crt_timestamp= req.body.note.crt_timestamp;
-    
-        db.notes.push({
-            title: title,
-            body: body,
-            uid: userId,
-            displayName: displayName,
-            image: photo,
-            crt_timestamp: crt_timestamp
-        })
+        db.notes.push(req.body.note)
       res.send("success")    
 };
 

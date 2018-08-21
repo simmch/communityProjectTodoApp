@@ -31,7 +31,7 @@ class NoteModal extends Component {
             title: this.state.title,
             body: this.state.body,
             uid: this.props.user.uid,
-            photo: image,
+            image: image,
             displayName: this.props.user.displayName,
             crt_timestamp: crt_timestamp
         }
